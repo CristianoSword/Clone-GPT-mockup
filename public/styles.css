@@ -114,7 +114,8 @@ body {
 
 .message-row {
   display: flex;
-  margin-bottom: 16px;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
 .message-row.user {
@@ -126,26 +127,29 @@ body {
 }
 
 .message-bubble {
-  max-width: min(760px, 82%);
-  padding: 14px 16px;
-  border-radius: 18px;
-  line-height: 1.6;
+  max-width: 75%;
+  padding: 0 13px;
+  border-radius: 20px;
   font-size: 0.96rem;
-  white-space: pre-wrap;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .message-row.user .message-bubble {
-  background: #10a37f;
+  background: var(--accent);
   color: white;
-  border-bottom-right-radius: 6px;
+  border-bottom-right-radius: 4px;
+  margin-right: 4px;
 }
 
 .message-row.assistant .message-bubble {
-  background: #40414f;
+  background: var(--panel-soft);
   color: var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-bottom-left-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom-left-radius: 4px;
+  margin-left: 4px;
 }
 
 .composer {

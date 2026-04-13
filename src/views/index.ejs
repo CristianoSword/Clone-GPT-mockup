@@ -1,48 +1,46 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Clone GPT Mockup</title>
-    <link rel="stylesheet" href="/styles.css" />
-    <script src="https://unpkg.com/htmx.org@2.0.8"></script>
-  </head>
-  <body>
-    <main class="app-shell">
-      <section class="app-frame">
-        <aside class="sidebar">
-          <div class="brand">
-            <h1>Clone GPT</h1>
-            <p>Local chat, HTMX, and EJS</p>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clone GPT Mockup</title>
+  <link rel="stylesheet" href="/styles.css?v=4" />
+  <script src="https://unpkg.com/htmx.org@2.0.8"></script>
+</head>
+
+<body>
+  <main class="app-shell">
+    <section class="app-frame">
+      <aside class="sidebar">
+        <div class="brand">
+          <h1>Clone GPT</h1>
+          <p>Local chat, HTMX, and EJS</p>
+        </div>
+        <div class="sidebar-card">SPA-like interface with partial updates</div>
+        <div class="sidebar-card">Local mock / echo responses</div>
+        <div class="sidebar-card">Express + TypeScript</div>
+      </aside>
+      <section class="chat">
+        <header class="chat-header">
+          <div>
+            <h2>Chat</h2>
+            <p>Interface inspired by ChatGPT with partial updates.</p>
           </div>
-          <div class="sidebar-card">SPA-like interface with partial updates</div>
-          <div class="sidebar-card">Local mock / echo responses</div>
-          <div class="sidebar-card">Express + TypeScript</div>
-        </aside>
-        <section class="chat">
-          <header class="chat-header">
-            <div>
-              <h2>Chat</h2>
-              <p>Interface inspired by ChatGPT with partial updates.</p>
-            </div>
-          </header>
-          <div id="messages" class="messages">
-            <%- include('partials/messages', { thread }) %>
+        </header>
+        <div id="messages" class="messages">
+          <%- include('partials/messages', { thread }) %>
+        </div>
+        <form class="composer" hx-post="/chat" hx-target="#messages" hx-swap="innerHTML"
+          hx-on::after-request="this.reset(); document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;">
+          <div class="composer-row">
+            <input name="prompt" autocomplete="off" placeholder="Type a message..." />
+            <button>Send</button>
           </div>
-          <form
-            class="composer"
-            hx-post="/chat"
-            hx-target="#messages"
-            hx-swap="innerHTML"
-            hx-on::after-request="this.reset(); document.getElementById('messages').scrollTop = document.getElementById('messages').scrollHeight;"
-          >
-            <div class="composer-row">
-              <input name="prompt" autocomplete="off" placeholder="Type a message..." />
-              <button>Send</button>
-            </div>
-          </form>
-        </section>
+        </form>
       </section>
-    </main>
-  </body>
+    </section>
+  </main>
+</body>
+
 </html>
