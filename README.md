@@ -1,39 +1,39 @@
 # Clone GPT Mockup
 
-Aplicação web estilo ChatGPT construída com Express, TypeScript, EJS, HTMX e Tailwind CSS.
+A ChatGPT-style web app built with Express, TypeScript, EJS, HTMX, and Tailwind CSS.
 
-## O que inclui
+## What it includes
 
-- Servidor Node.js com Express + TypeScript
-- Interface SPA-like com visual inspirado no ChatGPT
-- Chat local simples com respostas mock/echo
-- Atualizações parciais via HTMX sem page reload
-- Views componentizadas com EJS partials
-- Testes com Vitest
-- ESLint e estrutura organizada
-- Dockerfile e docker-compose
+- Node.js server with Express + TypeScript
+- SPA-like interface inspired by ChatGPT
+- Simple local chat with mock/echo replies
+- Partial updates via HTMX without full page reloads
+- Componentized views with EJS partials
+- Vitest-based tests
+- ESLint and a clean project structure
+- Dockerfile and docker-compose
 
-## Requisitos
+## Requirements
 
-- Node.js 20+ recomendado
+- Node.js 20+ recommended
 - npm
-- Docker opcional para rodar em container
+- Docker is optional if you want to run in a container
 
-## Instalação
+## Installation
 
 ```bash
 npm install
 ```
 
-## Desenvolvimento
+## Development
 
 ```bash
 npm run dev
 ```
 
-Isso sobe o servidor Express via `ts-node`.
+This starts the Express server via `ts-node`.
 
-Abra `http://localhost:3000`.
+Open `http://localhost:3000`.
 
 ## Build
 
@@ -41,15 +41,15 @@ Abra `http://localhost:3000`.
 npm run build
 ```
 
-Gera `dist/` com o servidor compilado.
+Generates `dist/` with the compiled server.
 
-## Produção
+## Production
 
 ```bash
 npm start
 ```
 
-## Testes
+## Tests
 
 ```bash
 npm test
@@ -67,7 +67,7 @@ npm run lint
 docker compose up --build
 ```
 
-## Estrutura
+## Structure
 
 ```text
 src/
@@ -81,16 +81,16 @@ public/
 dist/
 ```
 
-## Como o chat funciona
+## How the chat works
 
-- O formulário envia a mensagem para `/chat`
-- O servidor adiciona a mensagem do usuário ao histórico em memória
-- O servidor gera uma resposta mock de eco
-- A rota retorna apenas o HTML parcial de mensagens
-- O HTMX substitui o conteúdo do painel sem recarregar a página
+- The form sends a message to `/chat`
+- The server adds the user message to the in-memory history
+- The server generates a mock echo response
+- The route returns only the messages HTML partial
+- HTMX swaps the message pane content without reloading the page
 
-## Próximos passos sugeridos
+## Suggested next steps
 
-- Persistir mensagens em banco
-- Trocar o mock por integração com uma LLM real
-- Adicionar autenticação e múltiplas conversas
+- Persist messages in a database
+- Replace the mock with a real LLM integration
+- Add authentication and multiple conversations
