@@ -1,15 +1,12 @@
 import type { ChatMessage } from '../chat/mockChat';
 
 export function renderChatMessage(message: ChatMessage): string {
-  const align = message.role === 'user' ? 'justify-end' : 'justify-start';
-  const bubble = message.role === 'user'
-    ? 'bg-sky-500 text-white'
-    : 'bg-zinc-800 text-zinc-100 border border-zinc-700';
+  const align = message.role === 'user' ? 'user' : 'assistant';
 
   return `
-    <div class="flex ${align}">
-      <article class="max-w-[80%] rounded-2xl px-4 py-3 shadow-lg ${bubble}">
-        <p class="whitespace-pre-wrap text-sm leading-6">${escapeHtml(message.content)}</p>
+    <div class="message-row ${align}">
+      <article class="message-bubble">
+        <p>${escapeHtml(message.content)}</p>
       </article>
     </div>
   `;

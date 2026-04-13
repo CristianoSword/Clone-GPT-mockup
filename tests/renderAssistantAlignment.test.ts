@@ -9,7 +9,7 @@ describe('renderChatMessage assistant alignment', () => {
       timestamp: new Date().toISOString()
     });
 
-    expect(html).toContain('justify-start');
-    expect(html).toContain('bg-zinc-800');
+    expect(html).toContain('message-row assistant');
+    expect(html).toContain('message-bubble');
   });
 });

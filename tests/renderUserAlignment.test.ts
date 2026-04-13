@@ -9,7 +9,7 @@ describe('renderChatMessage user alignment', () => {
       timestamp: new Date().toISOString()
     });
 
-    expect(html).toContain('justify-end');
-    expect(html).toContain('bg-sky-500');
+    expect(html).toContain('message-row user');
+    expect(html).toContain('message-bubble');
   });
 });
